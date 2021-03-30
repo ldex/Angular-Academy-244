@@ -26,7 +26,7 @@ export class ProductInsertComponent implements OnInit {
       .subscribe(
         product => {
           console.log('Product saved on server with id: ' + product.id);
-          this.productService.initProducts();
+          this.productService.initProducts(); // vider la cache
           this.router.navigateByUrl('products');
         },
         error => console.error('Could not save product with error: ' + error)
